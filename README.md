@@ -1,6 +1,8 @@
 # Link in Bio Astro Theme
 
-This is a customizable Link in Bio theme built with Astro and TailwindCSS.
+This is a customizable Link in Bio theme built with [Astro](https://astro.build) and [TailwindCSS](https://tailwindcss.com).
+
+[Live Preview Here](https://lib.corytrimm.com/)
 
 ## Preview
 
