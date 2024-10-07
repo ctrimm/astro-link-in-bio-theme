@@ -1,54 +1,44 @@
-# Astro Starter Kit: Basics
+# Link in Bio Astro Theme
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is a customizable Link in Bio theme built with Astro and TailwindCSS.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Getting Started
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Clone this repository
+2. Run `npm install`
+3. Run `npm run dev` to start the development server
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Customization
 
-## 🚀 Project Structure
+### Updating User Information
 
-Inside of your Astro project, you'll see the following folders and files:
+To update your information, edit the `config.js` file in the root directory. You can modify the following:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- User details (name, bio, profile image)
+  - you can create a notion like [profile photo here](https://www.avatartion.com/)
+- Background color and image
+- Social links
+- Custom links
+- Products
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Changing Profile Photo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Add your profile photo to the `public/images/` directory
+2. Update the `profileImage` path in `config.js`
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Changing Background
 
-## 🧞 Commands
+1. To change the background color, update the `background.color` value in `config.js`
+2. To use a background image, add the image to `public/images/` and update the `background.image` path in `config.js`
 
-All commands are run from the root of the project, from a terminal:
+### Ordering Content
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+The order of links and products is determined by their order in the `config.js` file. To change the order, simply rearrange the items in the `links` and `products` arrays.
 
-## 👀 Want to learn more?
+## Building for Production
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Run `npm run build` to create a production-ready build of your site.
+
+## Deploy
+
+You can deploy this site to any static site hosting platform. We recommend using [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/) for easy deployment.

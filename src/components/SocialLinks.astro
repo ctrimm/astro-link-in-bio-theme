@@ -1,0 +1,16 @@
+---
+import config from '../../config.js';
+---
+
+<div class="flex justify-center space-x-4 mt-4">
+  {config.socialLinks.map((link) => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-gray-600 hover:text-gray-800"
+    >
+      <i class={`fab fa-${link.platform} text-2xl`}></i>
+    </a>
+  ))}
+</div>

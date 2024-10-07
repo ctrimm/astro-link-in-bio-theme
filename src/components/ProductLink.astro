@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  url: string;
+  price: number;
+  includePriceOnSite: boolean;
+  image: string;
+}
+
+const { title, description, url, price, includePriceOnSite, image } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block w-full bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300"
+>
+  <div class="flex items-center p-4">
+    <img src={image} alt={title} class="w-16 h-16 object-cover rounded-md mr-4" />
+    <div class="flex-grow">
+      <h3 class="font-bold">{title}</h3>
+      <p class="text-sm text-gray-600">{description}</p>
+    </div>
+    {includePriceOnSite && (
+      <div class="text-lg font-bold text-green-600">${price.toFixed(2)}</div>
+    )}
+  </div>
+</a>

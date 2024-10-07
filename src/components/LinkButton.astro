@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+  url: string;
+  icon?: string;
+}
+
+const { title, url, icon } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block w-full py-3 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-center transition duration-300"
+>
+  {icon && <i class={`fas fa-${icon} mr-2`}></i>}
+  {title}
+</a>

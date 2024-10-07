@@ -1,0 +1,13 @@
+---
+import config from '../../config.js';
+---
+
+<div class="text-center">
+  <img
+    src={config.user.profileImage}
+    alt={config.user.name}
+    class="w-24 h-24 rounded-full mx-auto mb-4"
+  />
+  <h1 class="text-2xl font-bold">{config.user.name}</h1>
+  <p class="text-gray-600">{config.user.bio}</p>
+</div>
