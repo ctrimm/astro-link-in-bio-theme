@@ -9,13 +9,13 @@ const config = {
   },
   background: {
     color: "#f0f0f0",
-    image: "/src/images/background.jpg",
+    image: "/src/images/backgrounds/watercolor-pink-blue.png",
   },
   socialLinks: [
     {
       platform: "instagram",
       url: "https://instagram.com/journey.unknown",
-      icon: "instagram",
+      icon: "camera-retro",
     },
     {
       platform: "threads",
@@ -33,12 +33,12 @@ const config = {
     {
       title: "My Personal Web Site",
       url: "https://corytrimm.com",
-      icon: "wordpress",
+      icon: "globe",
     },
     {
       title: "Join My YouTube Channel",
       url: "https://youtube.com/c/corytrimm",
-      icon: "youtube",
+      icon: "play",
     },
     // Add more links as needed
   ],
@@ -49,7 +49,7 @@ const config = {
       url: "https://yourproduct.com",
       price: 19.99,
       includePriceOnSite: true,
-      image: "/src/images/product1.jpg",
+      image: "/src/images/product1.png",
     },
     // Add more products as needed
   ],
