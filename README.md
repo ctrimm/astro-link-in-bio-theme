@@ -2,6 +2,10 @@
 
 This is a customizable Link in Bio theme built with Astro and TailwindCSS.
 
+## Preview
+
+![Preview screenshot](./preview.png)
+
 ## Getting Started
 
 1. Clone this repository
