@@ -1,15 +1,18 @@
 // @ts-check
+import profileImage from './src/images/profilepic.png?url';
+import backgroundImage from './src/images/backgrounds/watercolor-blue-green.png?url';
+import productImage from './src/images/product1.png?url';
 
 /** @type {import('./src/types').SiteConfig} */
 const config = {
   user: {
     name: "Cory Trimm",
     bio: "Serial builder of things - software, hardware, and everything in between. This is my little link in bio project built with Astro and Tailwind.",
-    profileImage: "/src/images/profilepic.png",
+    profileImage: profileImage,
   },
   background: {
     color: "#f0f0f0",
-    image: "/src/images/backgrounds/watercolor-blue-green.png",
+    image: backgroundImage,
   },
   socialLinks: [
     {
@@ -65,7 +68,7 @@ const config = {
       url: "https://yourproduct.com",
       price: 19.99,
       includePriceOnSite: true,
-      image: "/src/images/product1.png",
+      image: productImage,
     },
     // Add more products as needed
   ],
