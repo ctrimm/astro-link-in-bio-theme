@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 export interface Props {
   title: string;
   description: string;
@@ -15,10 +17,16 @@ const { title, description, url, price, includePriceOnSite, image } = Astro.prop
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="block w-full bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300"
+  class="block w-full bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 border-solid border-2 border-slate-950"
 >
   <div class="flex items-center p-4">
-    <img src={image} alt={title} class="w-16 h-16 object-cover rounded-md mr-4" />
+    <Image
+      src={image}
+      alt={title}
+      width={64}
+      height={64}
+      class="w-16 h-16 object-cover rounded-md mr-4"
+    />
     <div class="flex-grow">
       <h3 class="font-bold">{title}</h3>
       <p class="text-sm text-gray-600">{description}</p>

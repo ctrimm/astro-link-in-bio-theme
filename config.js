@@ -4,12 +4,12 @@
 const config = {
   user: {
     name: "Cory Trimm",
-    bio: "Serial builder of things - software, hardware, and everything in between. This is my little link in bio project built with Astro.",
+    bio: "Serial builder of things - software, hardware, and everything in between. This is my little link in bio project built with Astro and Tailwind.",
     profileImage: "/src/images/profilepic.png",
   },
   background: {
     color: "#f0f0f0",
-    image: "/src/images/backgrounds/watercolor-pink-blue.png",
+    image: "/src/images/backgrounds/watercolor-blue-green.png",
   },
   socialLinks: [
     {
@@ -19,7 +19,7 @@ const config = {
     },
     {
       platform: "threads",
-      url: "https://threads.com/@journey.unknown",
+      url: "https://threads.net/@journey.unknown",
       icon: "threads",
     },
     {
@@ -27,7 +27,23 @@ const config = {
       url: "https://linkedin.com/in/cory-trimm",
       icon: "linkedin",
     },
+    {
+      platform: "spotify",
+      url: "https://spotify.com",
+      icon: "spotify",
+    },
+    {
+      platform: "snapchat",
+      url: "https://snapchat.com",
+      icon: "snapchaat",
+    },
+    {
+      platform: "tiktok",
+      url: "https://tiktok.com",
+      icon: "tiktok",
+    },
     // Add more social links as needed
+    // Search for icons here - https://fontawesome.com/search
   ],
   links: [
     {

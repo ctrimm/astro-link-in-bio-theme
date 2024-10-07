@@ -1,13 +1,16 @@
 ---
 import config from '../../config.js';
+import { Image } from 'astro:assets';
 ---
 
 <div class="text-center">
-  <img
+  <Image
     src={config.user.profileImage}
     alt={config.user.name}
-    class="w-24 h-24 rounded-full mx-auto mb-4"
+    width={64}
+    height={64}
+    class="w-36 h-36 rounded-full mx-auto mb-4 shadow-sm border-solid border-2 border-red-300"
   />
-  <h1 class="text-2xl font-bold">{config.user.name}</h1>
-  <p class="text-gray-600">{config.user.bio}</p>
+  <h1 class="text-4xl font-extrabold tracking-wide">{config.user.name}</h1>
+  <p class="text-gray-700 front-semibold tracking-wide">{config.user.bio}</p>
 </div>
