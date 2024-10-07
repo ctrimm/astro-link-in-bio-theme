@@ -50,6 +50,11 @@ const config = {
   ],
   links: [
     {
+      title: "Use This Template",
+      url: "https://github.com/ctrimm/astro-link-in-bio-theme",
+      icon: "code",
+    },
+    {
       title: "My Personal Web Site",
       url: "https://corytrimm.com",
       icon: "globe",
@@ -65,7 +70,7 @@ const config = {
     {
       title: "Digital Product",
       description: "Description of your digital product",
-      url: "https://yourproduct.com",
+      url: "https://inshortpod.com",
       price: 19.99,
       includePriceOnSite: true,
       image: productImage,

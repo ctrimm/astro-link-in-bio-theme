@@ -9,25 +9,27 @@ import ProductLink from '../components/ProductLink.astro';
 ---
 
 <Layout title={`${config.user.name} - Link in Bio`}>
-  <main class="container mx-auto px-4 py-8">
-    <Profile />
-    <SocialLinks />
-    <div class="space-y-4 mt-6">
-      {config.links.map((link) => (
-        <LinkButton title={link.title} url={link.url} icon={link.icon} />
-      ))}
-    </div>
-    <div class="space-y-4 mt-6">
-      {config.products.map((product) => (
-        <ProductLink
-          title={product.title}
-          description={product.description}
-          url={product.url}
-          price={product.price}
-          includePriceOnSite={product.includePriceOnSite}
-          image={product.image}
-        />
-      ))}
-    </div>
-  </main>
+  <div class="mx-auto px-4 py-8 sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+    <main class="container mx-auto">
+      <Profile />
+      <SocialLinks />
+      <div class="space-y-4 mt-6">
+        {config.links.map((link) => (
+          <LinkButton title={link.title} url={link.url} icon={link.icon} />
+        ))}
+      </div>
+      <div class="space-y-4 mt-6">
+        {config.products.map((product) => (
+          <ProductLink
+            title={product.title}
+            description={product.description}
+            url={product.url}
+            price={product.price}
+            includePriceOnSite={product.includePriceOnSite}
+            image={product.image}
+          />
+        ))}
+      </div>
+    </main>
+  </div>
 </Layout>

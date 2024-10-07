@@ -1,16 +1,17 @@
 ---
+// src/components/SocialLinks.astro
 import config from '../../config.js';
 ---
 
-<div class="flex justify-center space-x-4 mt-4">
+<div class="flex justify-center space-x-4 md:space-x-8 mt-4">
   {config.socialLinks.map((link) => (
     <a
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      class="text-gray-600 hover:text-gray-800"
+      class="text-gray-600 hover:text-gray-800 transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl hover:animate-wiggle"
     >
-      <i class={`fab fa-${link.platform} text-2xl font-bold`}></i>
+      <i class={`fab fa-${link.platform} font-bold`}></i>
     </a>
   ))}
 </div>
