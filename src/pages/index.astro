@@ -1,10 +1,12 @@
 ---
+import config from '../../config.js';
+import PostHogLayout from '../layouts/PostHogLayout.astro';
+
 import Layout from '../layouts/Layout.astro';
 import Profile from '../components/Profile.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import LinkButton from '../components/LinkButton.astro';
 import ProductLink from '../components/ProductLink.astro';
-import config from '../../config.js';
 ---
 
 <Layout title={`${config.user.name} - Link in Bio`}>
