@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+  title: string;
+  description: string;
+  url: string;
+  price: number;
+  includePriceOnSite: boolean;
+  image: string;
+}
+
+const { title, description, url, price, includePriceOnSite, image } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block p-4 bg-pastel-pink rounded-lg hover:bg-pastel-purple transition-colors duration-300"
+>
+  <div class="flex items-center group">
+    <img src={image} alt={title} class="w-16 h-16 mr-4 rounded-lg" />
+    <div>
+      <h3 class="text-lg font-semibold text-pastel-blue drop-shadow-md">{title}</h3>
+      <p class="text-pastel-green drop-shadow-md">{description}</p>
+      {includePriceOnSite && (
+        <p class="text-pastel-purple font-bold group-hover:text-pastel-green drop-shadow-md">${price.toFixed(2)}</p>
+      )}
+    </div>
+  </div>
+</a>

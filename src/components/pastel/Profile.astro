@@ -1,0 +1,13 @@
+---
+import config from '../../configs/pastel-config.js';
+---
+
+<div class="flex flex-col items-center mb-6">
+  <img
+    src={config.user.profileImage}
+    alt={`${config.user.name} profile picture`}
+    class="w-32 h-32 rounded-full mb-4 border-2 border-pastel-purple"
+  />
+  <h1 class="text-4xl font-extrabold text-pastel-purple mb-2 tracking-wide drop-shadow-lg">{config.user.name}</h1>
+  <p class="text-center font-semibold text-pastel-blue tracking-wide drop-shadow-md">{config.user.bio}</p>
+</div>

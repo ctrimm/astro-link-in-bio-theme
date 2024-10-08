@@ -1,0 +1,35 @@
+---
+import config from '../../config.js';
+
+import Layout from '../layouts/PastelLayout.astro';
+import Profile from '../components/pastel/Profile.astro';
+import SocialLinks from '../components/pastel/SocialLinks.astro';
+import LinkButton from '../components/pastel/LinkButton.astro';
+import ProductLink from '../components/pastel/ProductLink.astro';
+---
+
+<Layout title={`${config.user.name} - Link in Bio`}>
+  <div class="mx-auto px-4 py-8 sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+    <main class="container mx-auto">
+      <Profile />
+      <SocialLinks />
+      <div class="space-y-4 mt-6">
+        {config.links.map((link) => (
+          <LinkButton title={link.title} url={link.url} icon={link.icon} />
+        ))}
+      </div>
+      <div class="space-y-4 mt-6">
+        {config.products.map((product) => (
+          <ProductLink
+            title={product.title}
+            description={product.description}
+            url={product.url}
+            price={product.price}
+            includePriceOnSite={product.includePriceOnSite}
+            image={product.image}
+          />
+        ))}
+      </div>
+    </main>
+  </div>
+</Layout>

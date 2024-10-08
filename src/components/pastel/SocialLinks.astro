@@ -1,0 +1,17 @@
+---
+// src/components/SocialLinks.astro
+import config from '../../configs/pastel-config.js';
+---
+
+<div class="flex justify-center space-x-4 mt-4">
+  {config.socialLinks.map((link) => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-pastel-green hover:text-pastel-blue transition-colors duration-300 sm:text-3xl hover:animate-wiggle"
+    >
+      <i class={`fab fa-${link.platform} font-bold`}></i>
+    </a>
+  ))}
+</div>

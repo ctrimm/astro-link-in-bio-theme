@@ -1,0 +1,21 @@
+---
+export interface Props {
+  title: string;
+  url: string;
+  icon?: string;
+}
+
+const { title, url, icon } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block p-4 bg-pastel-yellow rounded-lg hover:bg-pastel-green transition-colors duration-300"
+>
+  <div class="flex items-center">
+    <i class={`fas fa-${icon} text-2xl text-pastel-blue mr-4`}></i>
+    <span class="text-xl font-semibold text-pastel-purple drop-shadow-md">{title}</span>
+  </div>
+</a>

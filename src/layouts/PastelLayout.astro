@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import config from '../../config.js';
+import config from '../configs/pastel-config.js';
 import PostHog from '../components/PostHog.astro';
 import LayoutSwitcher from '../components/LayoutSwitcher.astro';
 
@@ -22,17 +22,16 @@ const { title } = Astro.props;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <PostHog />
   </head>
-  <body
-    class="min-h-screen"
-    style={`
-      background-color: ${config.background.color};
-      background-image: url(${config.background.image});
-      background-size: cover; /* This will make the image cover the entire background */
-      background-repeat: no-repeat; /* This will prevent the image from repeating */
-      background-position: center center; /* This will center the image */
-    `}
-  >
-    <slot />
+  <body class="min-h-screen relative">
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={`background-color: ${config.background.color};`}
+    >
+      <div class="absolute inset-0 bg-slate-300 opacity-25"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4 py-8">
+      <slot/>
+    </div>
     <LayoutSwitcher />
   </body>
 </html>
