@@ -1,9 +1,9 @@
 // @ts-check
-import profileImage from './src/images/profilepic.png?url';
-import backgroundImage from './src/images/backgrounds/watercolor-orange-centered.png?url';
-import productImage from './src/images/product1.png?url';
+import profileImage from '../images/profilepic.png?url';
+import backgroundImage from '../images/backgrounds/watercolor-orange-centered.png?url';
+import productImage from '../images/product1.png?url';
 
-/** @type {import('../../src/types').SiteConfig} */
+/** @type {import('../types').SiteConfig} */
 const config = {
   user: {
     name: "Cory Trimm",
