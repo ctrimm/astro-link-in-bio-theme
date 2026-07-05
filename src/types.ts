@@ -32,4 +32,15 @@ export interface SiteConfig {
     description?: string;
     url: string;
   }>;
+  experience?: Array<{
+    role: string;
+    organization: string;
+    url?: string;
+    location?: string;
+    startDate?: string;
+    endDate?: string;
+    current?: boolean;
+    description?: string;
+    icon?: string;
+  }>;
 }

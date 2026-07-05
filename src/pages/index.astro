@@ -6,6 +6,7 @@ import Profile from '../components/Profile.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import LinkButton from '../components/LinkButton.astro';
 import ProductLink from '../components/ProductLink.astro';
+import Timeline from '../components/Timeline.astro';
 import VideoEmbed from '../components/VideoEmbed.astro';
 ---
 
@@ -31,6 +32,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           />
         ))}
       </div>
+      <Timeline />
       {config.videos && config.videos.length > 0 && (
         <div class="space-y-4 mt-6">
           {config.videos.map((video) => <VideoEmbed video={video} />)}

@@ -6,12 +6,14 @@ import Profile from '../components/resume/Profile.astro';
 import SocialLinks from '../components/resume/SocialLinks.astro';
 import LinkCard from '../components/resume/LinkCard.astro';
 import ProductLink from '../components/resume/ProductLink.astro';
+import Timeline from '../components/resume/Timeline.astro';
 import VideoEmbed from '../components/VideoEmbed.astro';
 ---
 
 <Layout title={`${config.user.name} - Link in Bio`}>
   <Profile />
   <SocialLinks />
+  <Timeline />
   <div class="mb-6">
     {config.links.map((link) => <LinkCard link={link} />)}
   </div>

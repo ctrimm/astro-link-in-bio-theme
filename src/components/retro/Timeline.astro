@@ -1,0 +1,64 @@
+---
+import config from '../../configs/retro-config.js';
+import { formatDateRange } from '../../utils/experience';
+import { retroColors } from '../../utils/retro-colors';
+
+const accents = [retroColors['retro-pink'], retroColors['retro-cyan'], retroColors['retro-green'], retroColors['retro-orange']];
+
+const animations = `
+  @keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ffff; }
+    50% { text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
+  }
+`;
+---
+
+<style set:html={animations}></style>
+
+{config.experience && config.experience.length > 0 && (
+  <div class="mt-8">
+    <h2 class="text-3xl font-bold text-retro-yellow mb-6 animate-[glow_2s_ease-in-out_infinite]">Experience</h2>
+    <ol class="relative border-s-4 border-retro-cyan ms-3">
+      {config.experience.map((item, index) => (
+        <li class="mb-8 ms-6">
+          <span
+            class="absolute flex items-center justify-center w-4 h-4 border-2 border-white rounded-full -start-[9px]"
+            style={`background-color: ${accents[index % accents.length]};`}
+          />
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="font-bold text-white text-lg">
+              {item.icon && <i class={`fas fa-${item.icon} mr-2`} style={`color: ${accents[index % accents.length]};`} aria-hidden="true" />}
+              {item.role}
+            </h3>
+            {formatDateRange(item) && (
+              <span
+                class="font-bold text-black px-2 text-sm whitespace-nowrap"
+                style={`background-color: ${accents[index % accents.length]};`}
+              >
+                {formatDateRange(item)}
+              </span>
+            )}
+          </div>
+          <p class="text-white">
+            {item.url ? (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline"
+                data-track-click
+                data-track-title={item.organization}
+                data-track-url={item.url}
+                data-track-type="experience"
+              >
+                {item.organization}
+              </a>
+            ) : item.organization}
+            {item.location && <span class="text-white/70"> · {item.location}</span>}
+          </p>
+          {item.description && <p class="text-white/80 text-sm mt-1">{item.description}</p>}
+        </li>
+      ))}
+    </ol>
+  </div>
+)}

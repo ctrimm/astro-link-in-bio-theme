@@ -1,0 +1,52 @@
+---
+import config from '../../configs/dev-config.js';
+import { formatDateRange } from '../../utils/experience';
+---
+
+{config.experience && config.experience.length > 0 && (
+  <div class="mt-6 rounded-lg border border-slate-200 bg-white shadow-sm overflow-hidden">
+    <div class="flex items-center gap-2 bg-slate-800 px-4 py-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-red-400" />
+      <span class="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+      <span class="w-2.5 h-2.5 rounded-full bg-green-400" />
+      <span class="ml-2 font-mono text-xs text-slate-400">git log --experience</span>
+    </div>
+    <ol class="p-5 space-y-5">
+      {config.experience.map((item) => (
+        <li class="font-mono text-sm">
+          <p>
+            <span class="text-amber-600">*</span>
+            <span class="text-slate-400"> commit</span>
+            <span class="text-emerald-600"> {item.organization.toLowerCase().replace(/\s+/g, '-')}</span>
+            {formatDateRange(item) && <span class="text-slate-400"> ({formatDateRange(item)})</span>}
+          </p>
+          <p class="pl-4 not-italic font-sans">
+            <span class="font-semibold text-slate-800">
+              {item.icon && <i class={`fas fa-${item.icon} mr-1.5 text-slate-400`} aria-hidden="true" />}
+              {item.role}
+            </span>
+            <span class="text-slate-500">
+              {' '}@{' '}
+              {item.url ? (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sky-600 hover:underline"
+                  data-track-click
+                  data-track-title={item.organization}
+                  data-track-url={item.url}
+                  data-track-type="experience"
+                >
+                  {item.organization}
+                </a>
+              ) : item.organization}
+            </span>
+            {item.location && <span class="text-slate-400"> · {item.location}</span>}
+          </p>
+          {item.description && <p class="pl-4 font-sans text-slate-500 text-sm mt-0.5">{item.description}</p>}
+        </li>
+      ))}
+    </ol>
+  </div>
+)}

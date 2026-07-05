@@ -1,0 +1,54 @@
+---
+import config from '../../configs/brutalist-config.js';
+import { formatDateRange } from '../../utils/experience';
+
+const accents = ['#FF3EA5', '#4CC9F0', '#7CFC6B'];
+---
+
+{config.experience && config.experience.length > 0 && (
+  <div class="bg-white border-4 border-black shadow-[8px_8px_0_0_#000] p-6 mb-8">
+    <h2 class="text-2xl font-black uppercase tracking-tight mb-6">Experience</h2>
+    <ol class="relative border-s-4 border-black ms-3">
+      {config.experience.map((item, index) => (
+        <li class="mb-6 ms-8 last:mb-0">
+          <span
+            class="absolute w-5 h-5 border-4 border-black -start-[13px]"
+            style={`background-color: ${accents[index % accents.length]};`}
+          />
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="font-extrabold uppercase tracking-tight">
+              {item.icon && <i class={`fas fa-${item.icon} mr-2`} aria-hidden="true" />}
+              {item.role}
+            </h3>
+            {formatDateRange(item) && (
+              <span
+                class="text-xs font-black uppercase border-2 border-black px-2 py-0.5 whitespace-nowrap"
+                style={`background-color: ${accents[index % accents.length]};`}
+              >
+                {formatDateRange(item)}
+              </span>
+            )}
+          </div>
+          <p class="font-bold">
+            {item.url ? (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline"
+                data-track-click
+                data-track-title={item.organization}
+                data-track-url={item.url}
+                data-track-type="experience"
+              >
+                {item.organization}
+              </a>
+            ) : item.organization}
+            {item.location && <span> · {item.location}</span>}
+          </p>
+          {item.description && <p class="text-sm font-medium mt-1">{item.description}</p>}
+        </li>
+      ))}
+    </ol>
+  </div>
+)}

@@ -6,6 +6,7 @@ import Profile from '../components/glassy/Profile.astro';
 import SocialLinks from '../components/glassy/SocialLinks.astro';
 import LinkCard from '../components/glassy/LinkCard.astro';
 import ProductLink from '../components/glassy/ProductLink.astro';
+import Timeline from '../components/glassy/Timeline.astro';
 import VideoEmbed from '../components/VideoEmbed.astro';
 ---
 
@@ -15,6 +16,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
   <div class="space-y-4 mt-6">
     {config.links.map((link) => <LinkCard link={link} />)}
     {config.products.map((product) => <ProductLink product={product} />)}
+    <Timeline />
     {config.videos && config.videos.length > 0 && (
       config.videos.map((video) => <VideoEmbed video={video} class="text-white" />)
     )}

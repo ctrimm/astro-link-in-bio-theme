@@ -1,0 +1,44 @@
+---
+import config from '../../configs/pastel-config.js';
+import { formatDateRange } from '../../utils/experience';
+---
+
+{config.experience && config.experience.length > 0 && (
+  <div class="mt-8">
+    <h2 class="text-2xl font-extrabold text-pastel-purple mb-6 tracking-wide drop-shadow-lg">Experience</h2>
+    <ol class="relative border-s-2 border-pastel-purple ms-3">
+      {config.experience.map((item) => (
+        <li class="mb-8 ms-6">
+          <span class="absolute flex items-center justify-center w-3 h-3 bg-pastel-yellow border-2 border-pastel-purple rounded-full -start-[7px]" />
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="font-bold text-pastel-blue drop-shadow-md">
+              {item.icon && <i class={`fas fa-${item.icon} mr-2`} aria-hidden="true" />}
+              {item.role}
+            </h3>
+            {formatDateRange(item) && (
+              <span class="text-sm text-pastel-green whitespace-nowrap">{formatDateRange(item)}</span>
+            )}
+          </div>
+          <p class="text-pastel-purple font-semibold">
+            {item.url ? (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline"
+                data-track-click
+                data-track-title={item.organization}
+                data-track-url={item.url}
+                data-track-type="experience"
+              >
+                {item.organization}
+              </a>
+            ) : item.organization}
+            {item.location && <span class="text-pastel-blue"> · {item.location}</span>}
+          </p>
+          {item.description && <p class="text-pastel-green text-sm mt-1">{item.description}</p>}
+        </li>
+      ))}
+    </ol>
+  </div>
+)}

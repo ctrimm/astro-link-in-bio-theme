@@ -1,11 +1,12 @@
 ---
-import config from '../../config.js';
+import config from '../configs/pastel-config.js';
 
 import Layout from '../layouts/PastelLayout.astro';
 import Profile from '../components/pastel/Profile.astro';
 import SocialLinks from '../components/pastel/SocialLinks.astro';
 import LinkButton from '../components/pastel/LinkButton.astro';
 import ProductLink from '../components/pastel/ProductLink.astro';
+import Timeline from '../components/pastel/Timeline.astro';
 import VideoEmbed from '../components/VideoEmbed.astro';
 ---
 
@@ -31,6 +32,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           />
         ))}
       </div>
+      <Timeline />
       {config.videos && config.videos.length > 0 && (
         <div class="space-y-4 mt-6">
           {config.videos.map((video) => <VideoEmbed video={video} class="text-pastel-blue" />)}

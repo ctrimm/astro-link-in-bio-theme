@@ -58,6 +58,36 @@ const config = {
       image: productImage,
     },
   ],
+  experience: [
+    {
+      role: "Founder",
+      organization: "Independent",
+      startDate: "2021",
+      current: true,
+      location: "Remote",
+      description: "Building software and hardware side projects, including this link-in-bio theme.",
+      icon: "briefcase",
+    },
+    {
+      role: "Software Engineer",
+      organization: "Acme Corp",
+      url: "https://example.com",
+      startDate: "2018",
+      endDate: "2021",
+      location: "San Francisco, CA",
+      description: "Worked on web platform and developer tooling.",
+      icon: "code",
+    },
+    {
+      role: "Junior Developer",
+      organization: "Startup Studio",
+      startDate: "2016",
+      endDate: "2018",
+      location: "Austin, TX",
+      description: "Shipped features across several early-stage products.",
+      icon: "rocket",
+    },
+  ],
   videos: [],
 };
 
