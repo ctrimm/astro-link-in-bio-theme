@@ -1,0 +1,21 @@
+---
+import config from '../../configs/brutalist-config.js';
+---
+
+<div class="flex flex-wrap justify-center gap-3 mb-8">
+  {config.socialLinks.map((link) => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center justify-center w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[1px_1px_0_0_#000] hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100 text-black text-lg"
+      data-track-click
+      data-track-title={link.platform}
+      data-track-url={link.url}
+      data-track-type="social"
+    >
+      <i class={`fab fa-${link.platform}`} aria-hidden="true"></i>
+      <span class="sr-only">{link.platform}</span>
+    </a>
+  ))}
+</div>

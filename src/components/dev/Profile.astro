@@ -1,0 +1,31 @@
+---
+import config from '../../configs/dev-config.js';
+---
+
+<div class="mb-6 rounded-lg border border-slate-200 bg-white shadow-sm overflow-hidden">
+  <!-- Terminal-style window chrome -->
+  <div class="flex items-center gap-2 bg-slate-800 px-4 py-2">
+    <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+    <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+    <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+    <span class="ml-2 font-mono text-xs text-slate-400">~/{config.user.name.toLowerCase().replace(/\s+/g, '-')}</span>
+  </div>
+
+  <div class="flex flex-col items-center space-y-3 p-6">
+    <img
+      src={config.user.profileImage}
+      alt={config.user.name}
+      class="w-24 h-24 rounded-full border-2 border-slate-200"
+    />
+    <p class="font-mono text-xs text-emerald-600">
+      <span class="text-slate-400">$</span> whoami
+    </p>
+    <h1 class="text-2xl font-bold text-slate-900">{config.user.name}</h1>
+    {config.user.title && (
+      <p class="font-mono text-sm text-slate-500">
+        <span class="text-sky-500">&lt;</span>{config.user.title}<span class="text-sky-500"> /&gt;</span>
+      </p>
+    )}
+    <p class="text-center text-slate-600 max-w-md">{config.user.bio}</p>
+  </div>
+</div>

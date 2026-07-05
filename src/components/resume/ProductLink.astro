@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  product: {
+    title: string;
+    description: string;
+    url: string;
+    price: number;
+    includePriceOnSite: boolean;
+    image: string;
+  };
+}
+
+const { product } = Astro.props;
+---
+
+<a
+  href={product.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex items-center gap-4 w-full max-w-md mx-auto p-4 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow duration-200 mb-3"
+  data-track-click
+  data-track-title={product.title}
+  data-track-url={product.url}
+  data-track-type="product"
+>
+  <Image
+    src={product.image}
+    alt={product.title}
+    width={56}
+    height={56}
+    class="w-14 h-14 rounded-md object-cover"
+  />
+  <div class="flex-1">
+    <h3 class="font-semibold text-slate-900">{product.title}</h3>
+    <p class="text-sm text-slate-500">{product.description}</p>
+  </div>
+  {product.includePriceOnSite && (
+    <span class="font-semibold text-indigo-600">${product.price.toFixed(2)}</span>
+  )}
+</a>

@@ -1,0 +1,21 @@
+---
+import config from '../../configs/resume-config.js';
+---
+
+<div class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-6 text-sm">
+  {config.socialLinks.map((link) => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-1.5 text-slate-600 hover:text-indigo-600 transition-colors duration-200"
+      data-track-click
+      data-track-title={link.platform}
+      data-track-url={link.url}
+      data-track-type="social"
+    >
+      <i class={`fab fa-${link.platform}`} aria-hidden="true"></i>
+      <span class="capitalize">{link.platform}</span>
+    </a>
+  ))}
+</div>

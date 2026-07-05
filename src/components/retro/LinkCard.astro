@@ -1,4 +1,6 @@
 ---
+import { getRetroColor } from '../../utils/retro-colors';
+
 interface Props {
   link: {
     title: string;
@@ -27,9 +29,16 @@ const animations = `
 <a
   href={link.url}
   class={`block w-full max-w-md mx-auto mb-6 group relative overflow-hidden`}
+  data-track-click
+  data-track-title={link.title}
+  data-track-url={link.url}
+  data-track-type="link"
 >
   <!-- Background with animated pattern -->
-  <div class={`bg-${link.color} p-6 rounded transform transition-transform duration-300 group-hover:scale-105`}>
+  <div
+    class="p-6 rounded transform transition-transform duration-300 group-hover:scale-105"
+    style={`background-color: ${getRetroColor(link.color)};`}
+  >
     <!-- Retro decorative elements -->
     <div class="absolute top-0 left-0 w-full h-1 bg-white opacity-50 animate-[blink_1s_ease-in-out_infinite]"></div>
     <div class="absolute bottom-0 right-0 w-full h-1 bg-white opacity-50 animate-[blink_1s_ease-in-out_infinite_reverse]"></div>

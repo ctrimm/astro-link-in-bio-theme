@@ -1,6 +1,7 @@
 export interface SiteConfig {
   user: {
     name: string;
+    title?: string;
     bio: string;
     profileImage: string;
   };
@@ -25,5 +26,21 @@ export interface SiteConfig {
     price: number;
     includePriceOnSite: boolean;
     image: string;
+  }>;
+  videos?: Array<{
+    title: string;
+    description?: string;
+    url: string;
+  }>;
+  experience?: Array<{
+    role: string;
+    organization: string;
+    url?: string;
+    location?: string;
+    startDate?: string;
+    endDate?: string;
+    current?: boolean;
+    description?: string;
+    icon?: string;
   }>;
 }

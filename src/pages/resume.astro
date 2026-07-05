@@ -1,0 +1,28 @@
+---
+import config from '../configs/resume-config.js';
+
+import Layout from '../layouts/ResumeLayout.astro';
+import Profile from '../components/resume/Profile.astro';
+import SocialLinks from '../components/resume/SocialLinks.astro';
+import LinkCard from '../components/resume/LinkCard.astro';
+import ProductLink from '../components/resume/ProductLink.astro';
+import Timeline from '../components/resume/Timeline.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+---
+
+<Layout title={`${config.user.name} - Link in Bio`}>
+  <Profile />
+  <SocialLinks />
+  <Timeline />
+  <div class="mb-6">
+    {config.links.map((link) => <LinkCard link={link} />)}
+  </div>
+  <div>
+    {config.products.map((product) => <ProductLink product={product} />)}
+  </div>
+  {config.videos && config.videos.length > 0 && (
+    <div class="mt-3">
+      {config.videos.map((video) => <VideoEmbed video={video} class="text-slate-800" />)}
+    </div>
+  )}
+</Layout>

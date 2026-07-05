@@ -77,6 +77,31 @@ const config = {
     },
     // Add more products as needed
   ],
+  experience: [
+    {
+      role: "Founder",
+      organization: "Independent",
+      startDate: "2021",
+      current: true,
+      location: "Remote",
+      description: "Building software and hardware side projects, including this link-in-bio theme.",
+      icon: "briefcase",
+    },
+    {
+      role: "Software Engineer",
+      organization: "Acme Corp",
+      startDate: "2018",
+      endDate: "2021",
+      location: "San Francisco, CA",
+      description: "Worked on web platform and developer tooling.",
+      icon: "code",
+    },
+    // Add more roles/projects as needed
+  ],
+  videos: [
+    // Add a YouTube, Vimeo, or Spotify link here to embed it, e.g.:
+    // { title: "My Latest Video", description: "Optional caption", url: "https://youtube.com/watch?v=..." },
+  ],
 };
 
 export const analytics = {

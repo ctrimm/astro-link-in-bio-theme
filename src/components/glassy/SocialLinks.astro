@@ -1,0 +1,21 @@
+---
+import config from '../../configs/glassy-config.js';
+---
+
+<div class="flex justify-center flex-wrap gap-3 mb-6">
+  {config.socialLinks.map((link) => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-200"
+      data-track-click
+      data-track-title={link.platform}
+      data-track-url={link.url}
+      data-track-type="social"
+    >
+      <i class={`fab fa-${link.platform}`} aria-hidden="true"></i>
+      <span class="sr-only">{link.platform}</span>
+    </a>
+  ))}
+</div>

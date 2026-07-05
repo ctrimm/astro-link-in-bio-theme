@@ -1,0 +1,24 @@
+---
+import config from '../configs/brutalist-config.js';
+
+import Layout from '../layouts/BrutalistLayout.astro';
+import Profile from '../components/brutalist/Profile.astro';
+import SocialLinks from '../components/brutalist/SocialLinks.astro';
+import LinkCard from '../components/brutalist/LinkCard.astro';
+import ProductLink from '../components/brutalist/ProductLink.astro';
+import Timeline from '../components/brutalist/Timeline.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+---
+
+<Layout title={`${config.user.name} - Link in Bio`}>
+  <Profile />
+  <SocialLinks />
+  <Timeline />
+  <div>
+    {config.links.map((link, index) => <LinkCard link={link} index={index} />)}
+    {config.products.map((product) => <ProductLink product={product} />)}
+    {config.videos && config.videos.length > 0 && (
+      config.videos.map((video) => <VideoEmbed video={video} class="text-black font-bold" />)
+    )}
+  </div>
+</Layout>

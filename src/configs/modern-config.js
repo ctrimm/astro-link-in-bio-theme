@@ -1,3 +1,5 @@
+// @ts-check
+/** @type {import('../types').SiteConfig} */
 export default {
   user: {
     name: "Cory Trimm",
@@ -60,5 +62,26 @@ export default {
       includePriceOnSite: false,
       image: "/src/images/product1.png"
     }
-  ]
+  ],
+  experience: [
+    {
+      role: "Founder",
+      organization: "Independent",
+      startDate: "2021",
+      current: true,
+      location: "Remote",
+      description: "Building software and hardware side projects, including this link-in-bio theme.",
+      icon: "briefcase"
+    },
+    {
+      role: "Software Engineer",
+      organization: "Acme Corp",
+      startDate: "2018",
+      endDate: "2021",
+      location: "San Francisco, CA",
+      description: "Worked on web platform and developer tooling.",
+      icon: "code"
+    }
+  ],
+  videos: []
 };

@@ -1,0 +1,24 @@
+---
+import config from '../configs/dev-config.js';
+
+import Layout from '../layouts/DevLayout.astro';
+import Profile from '../components/dev/Profile.astro';
+import SocialLinks from '../components/dev/SocialLinks.astro';
+import LinkCard from '../components/dev/LinkCard.astro';
+import ProductLink from '../components/dev/ProductLink.astro';
+import Timeline from '../components/dev/Timeline.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+---
+
+<Layout title={`${config.user.name} - Link in Bio`}>
+  <Profile />
+  <SocialLinks />
+  <div class="space-y-3 mt-6">
+    {config.links.map((link) => <LinkCard link={link} />)}
+    {config.products.map((product) => <ProductLink product={product} />)}
+    {config.videos && config.videos.length > 0 && (
+      config.videos.map((video) => <VideoEmbed video={video} class="text-slate-800" />)
+    )}
+  </div>
+  <Timeline />
+</Layout>

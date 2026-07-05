@@ -1,4 +1,6 @@
 ---
+import { getRetroColor } from '../../utils/retro-colors';
+
 interface Props {
   product: {
     title: string;
@@ -30,8 +32,12 @@ const animations = `
 <a
   href={product.url}
   class="block w-full max-w-md mx-auto mb-8 group relative"
+  data-track-click
+  data-track-title={product.title}
+  data-track-url={product.url}
+  data-track-type="product"
 >
-  <div class={`bg-${product.color} rounded-lg overflow-hidden relative`}>
+  <div class="rounded-lg overflow-hidden relative" style={`background-color: ${getRetroColor(product.color)};`}>
     <!-- Static border effect -->
     <div class="absolute inset-0 rounded-lg border-2 border-white opacity-50"></div>
 

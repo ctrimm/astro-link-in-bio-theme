@@ -4,6 +4,8 @@ import Profile from '../components/retro/Profile.astro';
 import SocialLinks from '../components/retro/SocialLinks.astro';
 import LinkCard from '../components/retro/LinkCard.astro';
 import ProductLink from '../components/retro/ProductLink.astro';
+import Timeline from '../components/retro/Timeline.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
 import config from '../configs/retro-config.js';
 ---
 
@@ -13,5 +15,11 @@ import config from '../configs/retro-config.js';
   <div class="space-y-6 mt-8">
     {config.links.map((link) => <LinkCard link={link} />)}
     {config.products.map((product) => <ProductLink product={product} />)}
+    <Timeline />
+    {config.videos && config.videos.length > 0 && (
+      config.videos.map((video) => (
+        <VideoEmbed video={video} class="text-retro-yellow" />
+      ))
+    )}
   </div>
 </RetroLayout>
