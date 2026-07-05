@@ -60,5 +60,6 @@ export default {
       includePriceOnSite: false,
       image: "/src/images/product1.png"
     }
-  ]
+  ],
+  videos: []
 };

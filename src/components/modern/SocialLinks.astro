@@ -10,6 +10,10 @@ import config from '../../../config.js';
         target="_blank"
         rel="noopener noreferrer"
         class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-all duration-200 hover:scale-110 hover:-translate-y-1"
+        data-track-click
+        data-track-title={link.platform}
+        data-track-url={link.url}
+        data-track-type="social"
       >
         <i class={`fab fa-${link.platform} text-2xl`} aria-hidden="true" />
         <span class="sr-only">{link.platform}</span>

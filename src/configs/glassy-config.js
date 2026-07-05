@@ -1,17 +1,18 @@
 // @ts-check
 import profileImage from '../images/profilepic.png?url';
-import backgroundImage from '../images/backgrounds/watercolor-orange-centered.png?url';
+import backgroundImage from '../images/backgrounds/cityscape.png?url';
 import productImage from '../images/product1.png?url';
 
 /** @type {import('../types').SiteConfig} */
 const config = {
   user: {
     name: "Cory Trimm",
+    title: "Serial Builder",
     bio: "Serial builder of things - software, hardware, and everything in between. This is my little link in bio project built with Astro and Tailwind.",
     profileImage: profileImage,
   },
   background: {
-    color: "#000000",
+    color: "#0f172a",
     image: backgroundImage,
   },
   socialLinks: [
@@ -45,8 +46,6 @@ const config = {
       url: "https://tiktok.com",
       icon: "tiktok",
     },
-    // Add more social links as needed
-    // Search for icons here - https://fontawesome.com/search
   ],
   links: [
     {
@@ -64,7 +63,6 @@ const config = {
       url: "https://youtube.com/c/corytrimm",
       icon: "play",
     },
-    // Add more links as needed
   ],
   products: [
     {
@@ -75,15 +73,8 @@ const config = {
       includePriceOnSite: true,
       image: productImage,
     },
-    // Add more products as needed
   ],
   videos: [],
-};
-
-export const analytics = {
-  posthog: {
-    enableTracking: false
-  }
 };
 
 export default config;

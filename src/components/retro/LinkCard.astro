@@ -27,6 +27,10 @@ const animations = `
 <a
   href={link.url}
   class={`block w-full max-w-md mx-auto mb-6 group relative overflow-hidden`}
+  data-track-click
+  data-track-title={link.title}
+  data-track-url={link.url}
+  data-track-type="link"
 >
   <!-- Background with animated pattern -->
   <div class={`bg-${link.color} p-6 rounded transform transition-transform duration-300 group-hover:scale-105`}>

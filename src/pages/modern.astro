@@ -4,6 +4,7 @@ import Profile from '../components/modern/Profile.astro';
 import SocialLinks from '../components/modern/SocialLinks.astro';
 import ProductLink from '../components/modern/ProductLink.astro';
 import LinkCard from '../components/modern/LinkCard.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
 import config from '../configs/modern-config.js';
 ---
 
@@ -13,5 +14,10 @@ import config from '../configs/modern-config.js';
   <div class="space-y-6 mt-8">
     {config.products.map((product) => <ProductLink product={product} />)}
     {config.links.map((link) => <LinkCard link={link} />)}
+    {config.videos && config.videos.length > 0 && (
+      config.videos.map((video) => (
+        <VideoEmbed video={video} class="text-gray-900 dark:text-white" />
+      ))
+    )}
   </div>
 </ModernLayout>

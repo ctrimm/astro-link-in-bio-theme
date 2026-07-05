@@ -77,6 +77,10 @@ const config = {
     },
     // Add more products as needed
   ],
+  videos: [
+    // Add a YouTube, Vimeo, or Spotify link here to embed it, e.g.:
+    // { title: "My Latest Video", description: "Optional caption", url: "https://youtube.com/watch?v=..." },
+  ],
 };
 
 export const analytics = {

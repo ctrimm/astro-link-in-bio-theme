@@ -76,5 +76,6 @@ export default {
       image: "/src/images/product1.png",
       color: "retro-pink"
     }
-  ]
+  ],
+  videos: []
 };

@@ -13,6 +13,10 @@ const { title, url, icon } = Astro.props;
   target="_blank"
   rel="noopener noreferrer"
   class="block w-full bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300 border-solid border-2 border-slate-950 py-3 px-4 text-center"
+  data-track-click
+  data-track-title={title}
+  data-track-url={url}
+  data-track-type="link"
 >
   {icon && <i class={`fas fa-${icon} mr-2`}></i>}
   {title}

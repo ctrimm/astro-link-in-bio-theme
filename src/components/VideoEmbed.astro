@@ -1,0 +1,44 @@
+---
+// src/components/VideoEmbed.astro
+import { getEmbedUrl } from '../utils/embed';
+
+export interface Props {
+  video: {
+    title: string;
+    description?: string;
+    url: string;
+  };
+  class?: string;
+}
+
+const { video, class: className = '' } = Astro.props;
+const { embedUrl, provider } = getEmbedUrl(video.url);
+const isAudio = provider === 'spotify';
+---
+
+<div class={`w-full max-w-md mx-auto mb-6 ${className}`}>
+  <div class={`overflow-hidden rounded-lg ${isAudio ? '' : 'aspect-video'}`}>
+    <iframe
+      src={embedUrl}
+      title={video.title}
+      class="w-full h-full border-0"
+      style={isAudio ? 'height: 152px;' : ''}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      loading="lazy"
+    />
+  </div>
+  <a
+    href={video.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-2 block font-semibold hover:underline"
+    data-track-click
+    data-track-title={video.title}
+    data-track-url={video.url}
+    data-track-type="video"
+  >
+    {video.title}
+  </a>
+  {video.description && <p class="text-sm opacity-80">{video.description}</p>}
+</div>

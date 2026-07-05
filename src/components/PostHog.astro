@@ -15,3 +15,24 @@ import { analytics } from '../../config.js';
     )
   </script>
 )}
+
+{/*
+  Per-link click tracking: any element rendered with `data-track-click`
+  (social links, link buttons/cards, product links, video embeds) fires a
+  `link_click` event with which link, its destination, and its type.
+*/}
+{analytics.posthog.enableTracking && (
+  <script is:inline>
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-track-click]');
+      if (!el || typeof posthog === 'undefined') return;
+      var segment = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0];
+      posthog.capture('link_click', {
+        theme: segment || 'default',
+        title: el.getAttribute('data-track-title') || '',
+        url: el.getAttribute('data-track-url') || el.href || '',
+        type: el.getAttribute('data-track-type') || 'link'
+      });
+    });
+  </script>
+)}

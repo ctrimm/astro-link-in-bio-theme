@@ -1,0 +1,20 @@
+---
+import config from '../../configs/brutalist-config.js';
+---
+
+<div class="bg-white border-4 border-black shadow-[8px_8px_0_0_#000] p-6 mb-8">
+  <div class="flex flex-col items-center text-center">
+    <img
+      src={config.user.profileImage}
+      alt={config.user.name}
+      class="w-28 h-28 object-cover border-4 border-black mb-4"
+    />
+    <h1 class="text-4xl font-black uppercase tracking-tight leading-none">{config.user.name}</h1>
+    {config.user.title && (
+      <span class="inline-block bg-black text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mt-3">
+        {config.user.title}
+      </span>
+    )}
+    <p class="font-bold mt-4 max-w-md">{config.user.bio}</p>
+  </div>
+</div>

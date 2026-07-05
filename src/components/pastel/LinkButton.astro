@@ -13,6 +13,10 @@ const { title, url, icon } = Astro.props;
   target="_blank"
   rel="noopener noreferrer"
   class="block p-4 bg-pastel-yellow rounded-lg hover:bg-pastel-green transition-colors duration-300"
+  data-track-click
+  data-track-title={title}
+  data-track-url={url}
+  data-track-type="link"
 >
   <div class="flex items-center">
     <i class={`fas fa-${icon} text-2xl text-pastel-blue mr-4`}></i>

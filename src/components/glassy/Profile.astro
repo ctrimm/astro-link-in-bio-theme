@@ -1,0 +1,16 @@
+---
+import config from '../../configs/glassy-config.js';
+---
+
+<div class="flex flex-col items-center space-y-3 p-6 mb-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
+  <img
+    src={config.user.profileImage}
+    alt={config.user.name}
+    class="w-28 h-28 rounded-full border-2 border-white/40 shadow-lg"
+  />
+  <h1 class="text-3xl font-bold text-white drop-shadow-md text-center">{config.user.name}</h1>
+  {config.user.title && (
+    <p class="text-xs uppercase tracking-widest text-white/70">{config.user.title}</p>
+  )}
+  <p class="text-center text-white/80 max-w-md">{config.user.bio}</p>
+</div>

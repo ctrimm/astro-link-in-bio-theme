@@ -1,20 +1,25 @@
 // @ts-check
 import profileImage from '../images/profilepic.png?url';
-import backgroundImage from '../images/backgrounds/watercolor-orange-centered.png?url';
 import productImage from '../images/product1.png?url';
 
 /** @type {import('../types').SiteConfig} */
 const config = {
   user: {
     name: "Cory Trimm",
+    title: "Software Engineer",
     bio: "Serial builder of things - software, hardware, and everything in between. This is my little link in bio project built with Astro and Tailwind.",
     profileImage: profileImage,
   },
   background: {
-    color: "#000000",
-    image: backgroundImage,
+    color: "#f1f5f9",
+    image: "",
   },
   socialLinks: [
+    {
+      platform: "linkedin",
+      url: "https://linkedin.com/in/cory-trimm",
+      icon: "linkedin",
+    },
     {
       platform: "instagram",
       url: "https://instagram.com/journey.unknown",
@@ -25,46 +30,23 @@ const config = {
       url: "https://threads.net/@journey.unknown",
       icon: "threads",
     },
-    {
-      platform: "linkedin",
-      url: "https://linkedin.com/in/cory-trimm",
-      icon: "linkedin",
-    },
-    {
-      platform: "spotify",
-      url: "https://spotify.com",
-      icon: "spotify",
-    },
-    {
-      platform: "snapchat",
-      url: "https://snapchat.com",
-      icon: "snapchaat",
-    },
-    {
-      platform: "tiktok",
-      url: "https://tiktok.com",
-      icon: "tiktok",
-    },
-    // Add more social links as needed
-    // Search for icons here - https://fontawesome.com/search
   ],
   links: [
-    {
-      title: "Use This Template",
-      url: "https://github.com/ctrimm/astro-link-in-bio-theme",
-      icon: "code",
-    },
     {
       title: "My Personal Web Site",
       url: "https://corytrimm.com",
       icon: "globe",
     },
     {
+      title: "Use This Template",
+      url: "https://github.com/ctrimm/astro-link-in-bio-theme",
+      icon: "code",
+    },
+    {
       title: "Join My YouTube Channel",
       url: "https://youtube.com/c/corytrimm",
       icon: "play",
     },
-    // Add more links as needed
   ],
   products: [
     {
@@ -75,15 +57,8 @@ const config = {
       includePriceOnSite: true,
       image: productImage,
     },
-    // Add more products as needed
   ],
   videos: [],
-};
-
-export const analytics = {
-  posthog: {
-    enableTracking: false
-  }
 };
 
 export default config;

@@ -6,6 +6,7 @@ import Profile from '../components/pastel/Profile.astro';
 import SocialLinks from '../components/pastel/SocialLinks.astro';
 import LinkButton from '../components/pastel/LinkButton.astro';
 import ProductLink from '../components/pastel/ProductLink.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
 ---
 
 <Layout title={`${config.user.name} - Link in Bio`}>
@@ -30,6 +31,11 @@ import ProductLink from '../components/pastel/ProductLink.astro';
           />
         ))}
       </div>
+      {config.videos && config.videos.length > 0 && (
+        <div class="space-y-4 mt-6">
+          {config.videos.map((video) => <VideoEmbed video={video} class="text-pastel-blue" />)}
+        </div>
+      )}
     </main>
   </div>
 </Layout>

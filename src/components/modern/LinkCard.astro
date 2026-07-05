@@ -13,6 +13,10 @@ const { link } = Astro.props;
 <a
   href={link.url}
   class="block w-full max-w-md mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 overflow-hidden mb-6 group"
+  data-track-click
+  data-track-title={link.title}
+  data-track-url={link.url}
+  data-track-type="link"
 >
   <div class="p-6 flex items-center">
     {link.icon && (

@@ -1,0 +1,26 @@
+---
+interface Props {
+  link: {
+    title: string;
+    url: string;
+    icon?: string;
+  };
+}
+
+const { link } = Astro.props;
+---
+
+<a
+  href={link.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex items-center w-full max-w-md mx-auto mb-4 p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg hover:bg-white/20 hover:-translate-y-0.5 transition-all duration-200 group"
+  data-track-click
+  data-track-title={link.title}
+  data-track-url={link.url}
+  data-track-type="link"
+>
+  {link.icon && <i class={`fas fa-${link.icon} text-lg text-white/80 mr-4`} aria-hidden="true"></i>}
+  <span class="flex-1 font-medium text-white">{link.title}</span>
+  <i class="fas fa-arrow-right text-white/50 group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
+</a>

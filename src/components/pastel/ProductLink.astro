@@ -18,6 +18,10 @@ const { title, description, url, price, includePriceOnSite, image } = Astro.prop
   target="_blank"
   rel="noopener noreferrer"
   class="block p-4 bg-pastel-pink rounded-lg hover:bg-pastel-purple transition-colors duration-300"
+  data-track-click
+  data-track-title={title}
+  data-track-url={url}
+  data-track-type="product"
 >
   <div class="flex items-center group">
     <Image

@@ -1,0 +1,22 @@
+---
+import config from '../configs/glassy-config.js';
+
+import Layout from '../layouts/GlassyLayout.astro';
+import Profile from '../components/glassy/Profile.astro';
+import SocialLinks from '../components/glassy/SocialLinks.astro';
+import LinkCard from '../components/glassy/LinkCard.astro';
+import ProductLink from '../components/glassy/ProductLink.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+---
+
+<Layout title={`${config.user.name} - Link in Bio`}>
+  <Profile />
+  <SocialLinks />
+  <div class="space-y-4 mt-6">
+    {config.links.map((link) => <LinkCard link={link} />)}
+    {config.products.map((product) => <ProductLink product={product} />)}
+    {config.videos && config.videos.length > 0 && (
+      config.videos.map((video) => <VideoEmbed video={video} class="text-white" />)
+    )}
+  </div>
+</Layout>

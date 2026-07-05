@@ -22,6 +22,10 @@ const animations = `
         rel="noopener noreferrer"
         class={`bg-${link.color} p-4 rounded transform transition-all duration-300 animate-[float_3s_ease-in-out_infinite] hover:scale-125 hover:rotate-12 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] group`}
         style={`animation-delay: ${index * 0.15}s`}
+        data-track-click
+        data-track-title={link.platform}
+        data-track-url={link.url}
+        data-track-type="social"
       >
         <i
           class={`fab fa-${link.platform} text-2xl text-black transition-transform duration-300 group-hover:scale-110`}

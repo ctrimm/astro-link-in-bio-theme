@@ -10,6 +10,10 @@ import config from '../../configs/pastel-config.js';
       target="_blank"
       rel="noopener noreferrer"
       class="text-pastel-green hover:text-pastel-blue transition-colors duration-300 sm:text-3xl hover:animate-wiggle"
+      data-track-click
+      data-track-title={link.platform}
+      data-track-url={link.url}
+      data-track-type="social"
     >
       <i class={`fab fa-${link.platform} font-bold`}></i>
     </a>

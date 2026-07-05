@@ -30,6 +30,10 @@ const animations = `
 <a
   href={product.url}
   class="block w-full max-w-md mx-auto mb-8 group relative"
+  data-track-click
+  data-track-title={product.title}
+  data-track-url={product.url}
+  data-track-type="product"
 >
   <div class={`bg-${product.color} rounded-lg overflow-hidden relative`}>
     <!-- Static border effect -->

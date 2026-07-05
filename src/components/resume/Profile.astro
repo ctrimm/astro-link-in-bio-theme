@@ -1,0 +1,20 @@
+---
+import config from '../../configs/resume-config.js';
+---
+
+<div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden mb-6">
+  <div class="h-2 bg-indigo-600"></div>
+  <div class="flex flex-col items-center text-center p-8">
+    <img
+      src={config.user.profileImage}
+      alt={config.user.name}
+      class="w-24 h-24 rounded-full object-cover mb-4 ring-2 ring-slate-100"
+    />
+    <h1 class="font-serif text-2xl font-bold text-slate-900">{config.user.name}</h1>
+    {config.user.title && (
+      <p class="text-sm font-medium text-indigo-600 tracking-wide uppercase mt-1">{config.user.title}</p>
+    )}
+    <div class="w-10 border-t-2 border-slate-200 my-4"></div>
+    <p class="text-slate-600 text-sm leading-relaxed">{config.user.bio}</p>
+  </div>
+</div>
